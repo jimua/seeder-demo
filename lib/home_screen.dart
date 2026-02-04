@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'seeder_map_simulation.dart';
 import 'seeder_2d_simulation.dart'; 
-import 'seeder_3d_simulation.dart'; 
+import 'seeder_3d_simulation.dart';
+import 'seeder_terrain_simulation.dart'; 
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -63,6 +64,21 @@ class HomeScreen extends StatelessWidget {
                 },
                 icon: const Icon(Icons.map),
                 label: const Text('Почати Демо з Картою'),
+              ),
+            ),
+            const SizedBox(height: 20),
+            SizedBox(
+              width: 250,
+              height: 50,
+              child: FilledButton.icon(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const SeederTerrainSimulation()),
+                  );
+                },
+                icon: const Icon(Icons.terrain),
+                label: const Text('Почати Демо з Рельєфом'),
               ),
             ),
           ],
